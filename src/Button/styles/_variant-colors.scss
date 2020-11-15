@@ -1,0 +1,58 @@
+@mixin variant-color($variant, $color-variant) {
+  /* Creating a dynamic class with the variant and color-variant */
+  &.#{$variant}-#{$color-variant} {
+    /* Color and interactive states for text and outlined variants */
+    @if ($variant == text or $variant == outlined) {
+      @if ($color-variant == default) {
+        color: var(--default-text-color);
+
+        &:hover,
+        &:focus {
+          background-color: var(--default-color);
+        }
+      } @else {
+        color: var(--#{$color-variant}-color);
+
+        &:hover,
+        &:focus {
+          background-color: var(--#{$color-variant}-color--focused);
+        }
+      }
+
+      @if ($variant == outlined) {
+        @if ($color-variant == default) {
+          border: 2px solid var(--border-color);
+        } @else {
+          border: 2px solid var(--#{$color-variant}-color);
+        }
+      }
+
+      &:active {
+        background-color: var(--#{$color-variant}-color--active);
+      }
+    }
+    /* Color and interactive state for default variant only */
+    @else {
+      @if ($color-variant == default) {
+        color: var(--default-text-color);
+      } @else {
+        color: white;
+      }
+
+      background-color: var(--#{$color-variant}-color);
+
+      &:hover,
+      &:focus {
+        background-color: var(--contained-#{$color-variant}-color--focused);
+      }
+
+      &:active {
+        background-color: var(--contained-#{$color-variant}-color--active);
+      }
+
+      &.elevation {
+        box-shadow: 0px 2px 3px var(--#{$color-variant}-shadow);
+      }
+    }
+  }
+}

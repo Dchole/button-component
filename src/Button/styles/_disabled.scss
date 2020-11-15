@@ -1,0 +1,14 @@
+@mixin disabled-button($variant) {
+  &.#{$variant}[disabled] {
+    color: var(--disabled-text-color);
+    cursor: initial;
+
+    @if ($variant == default) {
+      background-color: var(--disabled-color);
+    }
+
+    @if ($variant == outlined) {
+      border: 2px solid var(--disabled-text-color);
+    }
+  }
+}

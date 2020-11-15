@@ -1,0 +1,57 @@
+/* Sass Variables */
+/* Color */
+$primary-color: #2962ff;
+$secondary-color: #f80;
+$default-color: #e0e0e0;
+$danger-color: #d32f2f;
+$disabled-color: #e0e0e0;
+
+/* Variants & Variant-colors */
+$variants: default, text, outlined;
+$color-variants: default, primary, secondary, danger;
+
+/* Css Variables - (For Chrome Devtools) */
+:root {
+  /* Font Family */
+  --primary-font: "Noto Sans JP", sans-serif;
+
+  /* Color */
+  --primary-color: #{$primary-color};
+  --secondary-color: #{$secondary-color};
+  --danger-color: #{$danger-color};
+  --default-color: #{$default-color};
+  --disabled-color: #{$disabled-color};
+  --border-color: #3f3f3f;
+
+  --default-text-color: #3f3f3f;
+  --disabled-text-color: #9e9e9e;
+
+  /* background color for text/outlined variants on hover/focus state */
+  --primary-color--focused: #{rgba($primary-color, 0.1)};
+  --secondary-color--focused: #{rgba($secondary-color, 0.1)};
+  --danger-color--focused: #{rgba($danger-color, 0.1)};
+  --default-color--focused: #{rgba($default-color, 0.1)};
+
+  /* background color for text/outlined variants on active state */
+  --primary-color--active: #{rgba($primary-color, 0.3)};
+  --secondary-color--active: #{rgba($secondary-color, 0.3)};
+  --danger-color--active: #{rgba($danger-color, 0.3)};
+  --default-color--active: #{darken($default-color, 10)};
+
+  /* background color for default variants on hover/focus state */
+  --contained-primary-color--focused: #{lighten($primary-color, 15)};
+  --contained-secondary-color--focused: #{lighten($secondary-color, 15)};
+  --contained-danger-color--focused: #{lighten($danger-color, 15)};
+  --contained-default-color--focused: #{darken($default-color, 15)};
+
+  /* background color for default variants on hover/focus state */
+  --contained-primary-color--active: #{darken($primary-color, 15)};
+  --contained-secondary-color--active: #{darken($secondary-color, 15)};
+  --contained-danger-color--active: #{darken($danger-color, 15)};
+  --contained-default-color--active: #{darken($default-color, 15)};
+
+  --primary-shadow: #{rgba($primary-color, 0.4)};
+  --secondary-shadow: #{rgba($secondary-color, 0.4)};
+  --danger-shadow: #{rgba($danger-color, 0.4)};
+  --default-shadow: #{darken($default-color, 10)};
+}
